@@ -23,9 +23,9 @@
                 android:id="@+id/title"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                 android:text="Title"/>
+                 android:text="Name"/>
             
-            <EditText android:id="@+id/titletxt"
+            <EditText android:id="@+id/nametxt"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dip"

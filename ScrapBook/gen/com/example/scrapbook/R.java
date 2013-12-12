@@ -35,11 +35,11 @@ public final class R {
         public static final int discriptiontxt=0x7f080007;
         public static final int layoutHeader1=0x7f08000b;
         public static final int list=0x7f080000;
+        public static final int nametxt=0x7f080005;
         public static final int pic=0x7f08000a;
         public static final int picbutt=0x7f080003;
         public static final int scrollView1=0x7f080002;
         public static final int title=0x7f080004;
-        public static final int titletxt=0x7f080005;
         public static final int tvshd=0x7f08000f;
         public static final int tvsht=0x7f08000e;
         public static final int tvtitle1=0x7f08000d;

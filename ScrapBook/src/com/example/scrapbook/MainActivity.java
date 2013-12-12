@@ -33,7 +33,7 @@ public class MainActivity<ContactImageAdapter> extends Activity {
         DataBaseHandler db;
         String[] values;
         Cursor c1;
-        private static final String KEY_TITLE1 = "title";
+        private static final String KEY_NAME1 = "name";
         private static final String KEY_DES1 = "descrip";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public class MainActivity<ContactImageAdapter> extends Activity {
 			 HashMap<String, String> map = new HashMap<String, String>();
              
              // adding each child node to HashMap key => value
-             map.put(KEY_TITLE1, tt);
+             map.put(KEY_NAME1, tt);
             // map.put(KEY_DES1, dd);
              
              scraplist.add(map);	 
@@ -91,7 +91,7 @@ public class MainActivity<ContactImageAdapter> extends Activity {
 		    //      String did = ((TextView) view.findViewById(R.id.tvdes1)).getText().toString();
 			    Intent in = new Intent(MainActivity.this,
 			      ShowActivity.class);
-			    in.putExtra(KEY_TITLE1, tit);
+			    in.putExtra(KEY_NAME1, tit);
                // in.putExtra(KEY_DES1, did);
 			    startActivity(in);
 			   }

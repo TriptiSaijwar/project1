@@ -44,7 +44,7 @@ public class DetailsActivity extends Activity  {
 		    addImage = (Button) findViewById(R.id.picbutt);
 		    bAdd = (Button) findViewById(R.id.btnSubmit);
 	        bCan = (Button) findViewById(R.id.btnCancel);
-	        titletxt = (EditText) findViewById(R.id.titletxt);
+	        titletxt = (EditText) findViewById(R.id.nametxt);
 	        discriptiontxt = (EditText) findViewById(R.id.discriptiontxt);
 	        scrapimg = (ImageView) findViewById(R.id.pic);
 	        

@@ -21,7 +21,7 @@ public class DataBaseHandler {
 	
 	public static final String KEY_ID = "id";
 	public static final String KEY_IMAGE = "image";
-	public static final String KEY_TITLE = "title";
+	public static final String KEY_NAME = "name";
 	public static final String KEY_DES = "description";
 	
 	static SQLiteDatabase ourDatabase;
@@ -42,7 +42,7 @@ public class Dbh extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
 		db.execSQL("CREATE TABLE " + DATABASE_TABLE1 + "(" + KEY_ID
-				+ " INTEGER PRIMARY KEY AUTOINCREMENT, "  + KEY_IMAGE + " TEXT," + KEY_TITLE
+				+ " INTEGER PRIMARY KEY AUTOINCREMENT, "  + KEY_IMAGE + " TEXT," + KEY_NAME
 				+ " TEXT NOT NULL, " + KEY_DES + " TEXT NOT NULL);");
 	}
 
@@ -74,7 +74,7 @@ public class Dbh extends SQLiteOpenHelper {
 				
 			ContentValues cv = new ContentValues();
 			cv.put(KEY_IMAGE, imageName);
-			cv.put(KEY_TITLE, title);
+			cv.put(KEY_NAME, title);
 			cv.put(KEY_DES, des);
 			return ourDatabase.insert(DATABASE_TABLE1, null, cv);
 
@@ -86,7 +86,7 @@ public class Dbh extends SQLiteOpenHelper {
 
 			ContentValues cv = new ContentValues();
 			cv.put(KEY_IMAGE, img);
-			cv.put(KEY_TITLE, title);
+			cv.put(KEY_NAME, title);
 			cv.put(KEY_DES, des);
 			ourDatabase.update(DATABASE_TABLE1, cv, KEY_ID + "=" + rowid, null);
 		}
@@ -94,17 +94,17 @@ public class Dbh extends SQLiteOpenHelper {
 	 public String getData() {
 
 			// TODO Auto-generated method stub
-			String[] columns = new String[] { KEY_ID, KEY_IMAGE, KEY_TITLE ,KEY_DES};
+			String[] columns = new String[] { KEY_ID, KEY_IMAGE, KEY_NAME ,KEY_DES};
 			Cursor c = ourDatabase.query(DATABASE_NAME, columns, null, null, null, null, null);
 			String result = "";
 
 			int irow = c.getColumnIndex(KEY_ID);
 			int iimg = c.getColumnIndex(KEY_IMAGE);
-			int ititle = c.getColumnIndex(KEY_TITLE);
+			int iname = c.getColumnIndex(KEY_NAME);
 			int ides = c.getColumnIndex(KEY_DES);
 
 			for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()) {
-				result = result + c.getString(irow) + " "+c.getString(iimg) + " "+c.getString(ititle) + " "+c.getString(ides) + " "+"\n";
+				result = result + c.getString(irow) + " "+c.getString(iimg) + " "+c.getString(iname) + " "+c.getString(ides) + " "+"\n";
 
 			}
 
@@ -112,7 +112,7 @@ public class Dbh extends SQLiteOpenHelper {
 		}
 	 
 	 public String getName(int l){
-		 String[] columns = new String[] { KEY_ID, KEY_IMAGE, KEY_TITLE ,KEY_DES};
+		 String[] columns = new String[] { KEY_ID, KEY_IMAGE, KEY_NAME ,KEY_DES};
 		 Cursor c = ourDatabase.query(DATABASE_NAME, columns, KEY_ID + "=" + l, null, null, null, null);
 		 if(c!=null){
 			 c.moveToFirst();
@@ -134,7 +134,7 @@ public class Dbh extends SQLiteOpenHelper {
 	 } */
 	 
 	 public String getDes(int l){
-		 String[] columns = new String[] { KEY_ID, KEY_IMAGE, KEY_TITLE ,KEY_DES};
+		 String[] columns = new String[] { KEY_ID, KEY_IMAGE, KEY_NAME ,KEY_DES};
 		 Cursor c = ourDatabase.query(DATABASE_NAME, columns, KEY_ID + "=" + l, null, null, null, null, null);
 		 if(c!=null){
 			 c.moveToFirst();
@@ -151,7 +151,7 @@ public class Dbh extends SQLiteOpenHelper {
          String[] values = new String[count + 1];
          int i = 0;
          for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()) {
-        	   values[i] = c.getString(c.getColumnIndex("Name"));
+        	   values[i] = c.getString(c.getColumnIndex(KEY_NAME));
         	}
 		return values;
          }else{
