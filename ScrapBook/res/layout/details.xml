@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/picbutt" 
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            
+            <TextView 
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                 android:text="Title"/>
+            
+            <EditText android:id="@+id/titletxt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:inputType="text"/>
+
+         <TextView 
+                android:id="@+id/discription"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                 android:text="Discription"/>
+         
+          <EditText
+        android:id="@+id/discriptiontxt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip"
+        android:inputType="textMultiLine" />
+          
+           <Button android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:layout_marginTop="8dip"
+        android:layout_marginLeft="8dip"/>
+           
+            <Button android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:layout_marginTop="8dip"
+        android:layout_marginLeft="8dip"
+       />
+         
+        
+        </LinearLayout>
+         </ScrollView>
+    <Button
+        android:id="@+id/picbutt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pic"
+        android:text="Add Image"/>
+    
+    
+      <ImageView
+        android:id="@+id/pic"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical"
+        android:src="@drawable/ic_launcher" />
+
+</RelativeLayout>
